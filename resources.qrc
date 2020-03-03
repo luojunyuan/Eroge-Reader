@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>reader/ui/main.qml</file>
+    <file>reader/ui/images/baseline-menu-24px.svg</file>
+</qresource>
+</RCC>

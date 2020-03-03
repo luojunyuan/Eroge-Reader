@@ -1,0 +1,6 @@
+# qtcreator generated files
+ui.qmlproject.user
+
+# Python byte code
+__pycache__/
+*.pyc

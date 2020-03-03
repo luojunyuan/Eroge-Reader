@@ -9,9 +9,10 @@ class Reader(QObject):
         self.engine = QQmlApplicationEngine()
         # Load the qml file into the engine
         self.engine.load('qrc:reader/ui/main.qml') # is QUrl needed? and QStringLiteral
+        # self.engine.load('qrc:reader/ui/attachWindow.qml')
 
         # Qml file error handling
-        assert self.engine.rootObjects(), "fail to load main.qml"
+        assert self.engine.rootObjects(), "unless fail to load main.qml"
         #--------------------------------
         # from module.hooker import Hooker
         # from queue import Queue

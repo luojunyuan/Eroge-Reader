@@ -1,7 +1,6 @@
 import QtQuick 2.14
 import QtQuick.Layouts 1.14
 import QtQuick.Controls 2.14
-import QtQuick.Controls.Universal 2.14
 
 ApplicationWindow {
     id: root
@@ -50,9 +49,10 @@ ApplicationWindow {
         }
     }
 
-    TextEdit {
+    TextArea {
         id: text
         placeholderText: qsTr("Enter name")
+//        text: qsTr("sadfsdfsdfsd")
     }
 
 }

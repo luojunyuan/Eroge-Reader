@@ -4,3 +4,4 @@ ui.qmlproject.user
 # Python byte code
 __pycache__/
 *.pyc
+resources.py

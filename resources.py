@@ -6,114 +6,6 @@
 from PySide2 import QtCore
 
 qt_resource_data = b"\
-\x00\x00\x06\x91\
-i\
-mport QtQuick 2.\
-14\x0d\x0aimport QtQui\
-ck.Layouts 1.14\x0d\
-\x0aimport QtQuick.\
-Controls 2.14\x0d\x0a\x0d\
-\x0aApplicationWind\
-ow {\x0d\x0a    id: ro\
-ot\x0d\x0a    visible:\
- true\x0d\x0a    title\
-: qsTr('bulid')\x0d\
-\x0a\x0d\x0a    width: 48\
-0\x0d\x0a    height: 6\
-00\x0d\x0a    flags: Q\
-t.FramelessWindo\
-wHint\x0d\x0a    \x0d\x0a   \
- header: ToolBar\
- {\x0d\x0a        RowL\
-ayout {\x0d\x0a       \
-     anchors.fil\
-l: parent\x0d\x0a     \
-       ToolButto\
-n {\x0d\x0a           \
-     icon.source\
-: 'images/baseli\
-ne-menu-24px.svg\
-'\x0d\x0a             \
-   onClicked: si\
-deNav.open()\x0d\x0a  \
-          }\x0d\x0a   \
-         Drawer \
-{\x0d\x0a             \
-   id: sideNav\x0d\x0a\
-                \
-width: 200\x0d\x0a    \
-            heig\
-ht: parent.heigh\
-t\x0d\x0a             \
-   ColumnLayout \
-{\x0d\x0a             \
-       width: pa\
-rent.width\x0d\x0a    \
-                \
-Label {\x0d\x0a       \
-                \
- text: 'Drawer'\x0d\
-\x0a               \
-         horizon\
-talAlignment: Te\
-xt.AlignHCenter\x0d\
-\x0a               \
-         vertica\
-lAlignment: Text\
-.AlignVCenter\x0d\x0a \
-                \
-       font.pixe\
-lSize: 20\x0d\x0a     \
-                \
-   Layout.fillWi\
-dth: true\x0d\x0a     \
-               }\
-\x0d\x0a              \
-      Button {\x0d\x0a\
-                \
-        text: 'L\
-ist '\x0d\x0a         \
-               L\
-ayout.fillWidth:\
- true\x0d\x0a         \
-               f\
-lat: true\x0d\x0a     \
-                \
-   background.an\
-chors.fill: this\
-\x0d\x0a              \
-          spacin\
-g: 40\x0d\x0a         \
-           }\x0d\x0a  \
-              }\x0d\
-\x0a            }\x0d\x0a\
-            Labe\
-l {\x0d\x0a           \
-     text: qsTr(\
-'change title')\x0d\
-\x0a               \
- elide: Label.El\
-ideRight\x0d\x0a      \
-          horizo\
-ntalAlignment: Q\
-t.AlignHCenter\x0d\x0a\
-                \
-verticalAlignmen\
-t: Qt.AlignVCent\
-er\x0d\x0a            \
-    Layout.fillW\
-idth: true\x0d\x0a    \
-        }\x0d\x0a     \
-   }\x0d\x0a    }\x0d\x0a\x0d\x0a \
-   TextArea {\x0d\x0a \
-       id: text\x0d\
-\x0a        placeho\
-lderText: qsTr(\x22\
-Enter name\x22)\x0d\x0a//\
-        text: qs\
-Tr(\x22sadfsdfsdfsd\
-\x22)\x0d\x0a    }\x0d\x0a\x0d\x0a}\x0d\x0a\
-\
 \x00\x00\x06j\
 i\
 mport QtQuick 2.\
@@ -245,10 +137,6 @@ qt_resource_name = b"\
 \x00\x00\x07\xb9\
 \x00u\
 \x00i\
-\x00\x10\
-\x04K\xc2<\
-\x00a\
-\x00t\x00t\x00a\x00c\x00h\x00W\x00i\x00n\x00d\x00o\x00w\x00.\x00q\x00m\x00l\
 \x00\x06\
 \x07\x03}\xc3\
 \x00i\
@@ -269,15 +157,13 @@ qt_resource_struct = b"\
 \x00\x00\x00\x00\x00\x00\x00\x00\
 \x00\x00\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x02\
 \x00\x00\x00\x00\x00\x00\x00\x00\
-\x00\x00\x00\x12\x00\x02\x00\x00\x00\x03\x00\x00\x00\x03\
+\x00\x00\x00\x12\x00\x02\x00\x00\x00\x02\x00\x00\x00\x03\
 \x00\x00\x00\x00\x00\x00\x00\x00\
-\x00\x00\x00\x1c\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\
-\x00\x00\x01p\x9f\xff\x93U\
-\x00\x00\x00B\x00\x02\x00\x00\x00\x01\x00\x00\x00\x06\
+\x00\x00\x00\x1c\x00\x02\x00\x00\x00\x01\x00\x00\x00\x05\
 \x00\x00\x00\x00\x00\x00\x00\x00\
-\x00\x00\x00T\x00\x00\x00\x00\x00\x01\x00\x00\x06\x95\
+\x00\x00\x00.\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\
 \x00\x00\x01p\x9e\x16\xd6\x0b\
-\x00\x00\x00j\x00\x00\x00\x00\x00\x01\x00\x00\x0d\x03\
+\x00\x00\x00D\x00\x00\x00\x00\x00\x01\x00\x00\x06n\
 \x00\x00\x01pq\x88~f\
 "
 

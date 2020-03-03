@@ -13,16 +13,6 @@ class Reader(QObject):
 
         # Qml file error handling
         assert self.engine.rootObjects(), "unless fail to load main.qml"
-        #--------------------------------
-        # from module.hooker import Hooker
-        # from queue import Queue
-        # from module.textman import TextManager
-        # q = Queue()
-        # textprogress = TextManager(q)
-        # textractor = Hooker('C:\\Users\\ljy77\\应用\\YUKI\\lib\\textractor\\TextractorCLI.exe', q)
-        
-        # textractor.attach()
-
 
     def _connect(self):
         pass

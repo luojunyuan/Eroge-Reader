@@ -1,0 +1,2 @@
+module Main
+SideDrawer 1.0 ./SideDrawer.qml

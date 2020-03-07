@@ -6,111 +6,295 @@
 from PySide2 import QtCore
 
 qt_resource_data = b"\
-\x00\x00\x06j\
+\x00\x00\x0b\x06\
 i\
 mport QtQuick 2.\
 14\x0d\x0aimport QtQui\
 ck.Layouts 1.14\x0d\
 \x0aimport QtQuick.\
-Controls 2.14\x0d\x0a\x0d\
-\x0aApplicationWind\
-ow {\x0d\x0a    id: ro\
-ot\x0d\x0a    visible:\
- true\x0d\x0a    title\
-: qsTr('bulid')\x0d\
-\x0a\x0d\x0a    width: 48\
-0\x0d\x0a    height: 6\
-00\x0d\x0a\x0d\x0a    header\
-: ToolBar {\x0d\x0a   \
-     RowLayout {\
-\x0d\x0a            an\
-chors.fill: pare\
-nt\x0d\x0a            \
-ToolButton {\x0d\x0a  \
-              ic\
-on.source: 'imag\
-es/baseline-menu\
--24px.svg'\x0d\x0a    \
-            onCl\
-icked: sideNav.o\
-pen()\x0d\x0a         \
-   }\x0d\x0a          \
-  Drawer {\x0d\x0a    \
-            id: \
-sideNav\x0d\x0a       \
-         width: \
-200\x0d\x0a           \
-     height: par\
-ent.height\x0d\x0a    \
-            Colu\
-mnLayout {\x0d\x0a    \
+Controls 2.14\x0d\x0ai\
+mport QtQuick.Wi\
+ndow 2.14\x0d\x0a\x0d\x0aimp\
+ort Main 1.0\x0d\x0a\x0d\x0a\
+ApplicationWindo\
+w {\x0d\x0a    id: roo\
+t\x0d\x0a\x0d\x0a    visible\
+: true\x0d\x0a    titl\
+e: qsTr('bulid')\
+\x0d\x0a    width: 480\
+\x0d\x0a    height: 60\
+0\x0d\x0a    header: T\
+oolBar {\x0d\x0a      \
+  RowLayout {\x0d\x0a \
+           ancho\
+rs.fill: parent\x0d\
+\x0a            Too\
+lButton {\x0d\x0a     \
+           icon.\
+source: 'images/\
+baseline-menu-24\
+px.svg'\x0d\x0a       \
+         onClick\
+ed: sideNav.open\
+()\x0d\x0a\x0d\x0a          \
+      SideDrawer\
+ {\x0d\x0a            \
+        id: side\
+Nav\x0d\x0a           \
+         // TODO\
+: need to reduce\
+ drag height\x0d\x0a  \
                 \
-width: parent.wi\
-dth\x0d\x0a           \
-         Label {\
+  height: Applic\
+ationWindow.wind\
+ow.height\x0d\x0a     \
+               o\
+nClicked: root.t\
+est()\x0d\x0a         \
+       }\x0d\x0a      \
+      }\x0d\x0a\x0d\x0a     \
+       Label {\x0d\x0a\
+                \
+text: qsTr('chan\
+ge title')\x0d\x0a    \
+            elid\
+e: Label.ElideRi\
+ght\x0d\x0a           \
+     horizontalA\
+lignment: Qt.Ali\
+gnHCenter\x0d\x0a     \
+           verti\
+calAlignment: Qt\
+.AlignVCenter\x0d\x0a \
+               L\
+ayout.fillWidth:\
+ true\x0d\x0a         \
+   }\x0d\x0a        }\x0d\
+\x0a    }\x0d\x0a\x0d\x0a    si\
+gnal gameStart(s\
+tring gamePath)\x0d\
+\x0a    signal test\
+()\x0d\x0a\x0d\x0a    Scroll\
+View {\x0d\x0a        \
+id: gamePanel\x0d\x0a\x0d\
+\x0a        anchors\
+.fill: parent\x0d\x0a\x0d\
+\x0a\x0d\x0a        GridV\
+iew {\x0d\x0a         \
+   cellWidth: 16\
+0\x0d\x0a            c\
+ellHeight: 250\x0d\x0a\
+            clip\
+: true\x0d\x0a\x0d\x0a      \
+      model: gam\
+eModel\x0d\x0a        \
+    delegate: ga\
+meCard\x0d\x0a        \
+}\x0d\x0a        ListM\
+odel {\x0d\x0a        \
+    id: gameMode\
+l\x0d\x0a\x0d\x0a           \
+ ListElement { g\
+ameName: '\xe3\x82\xa2\xe3\x83\x9e\
+\xe3\x83\x84\xe3\x83\x84\xe3\x83\x9f'; path\
+: 'C:\x5c\x5cUsers\x5c\x5clj\
+y77\x5c\x5cSaved Games\
+\x5c\x5c\xe3\x82\xa2\xe3\x83\x9e\xe3\x83\x84\xe3\x83\x84\xe3\x83\
+\x9f\x5c\x5ccmvs32.exe' }\
+\x0d\x0a        }\x0d\x0a   \
+     Component {\
+\x0d\x0a            id\
+: gameCard\x0d\x0a\x0d\x0a  \
+          Item {\
 \x0d\x0a              \
-          text: \
-'Drawer'\x0d\x0a      \
+  width: GridVie\
+w.view.cellWidth\
+\x0d\x0a              \
+  height: GridVi\
+ew.view.cellHeig\
+ht\x0d\x0a\x0d\x0a          \
+      Column {\x0d\x0a\
                 \
-  horizontalAlig\
-nment: Text.Alig\
-nHCenter\x0d\x0a      \
+    anchors.fill\
+: parent\x0d\x0a      \
+              pa\
+dding: 5\x0d\x0a\x0d\x0a    \
                 \
-  verticalAlignm\
-ent: Text.AlignV\
-Center\x0d\x0a        \
+Rectangle{\x0d\x0a    \
                 \
-font.pixelSize: \
-20\x0d\x0a            \
-            Layo\
-ut.fillWidth: tr\
-ue\x0d\x0a            \
-        }\x0d\x0a     \
-               B\
-utton {\x0d\x0a       \
+    id: img\x0d\x0a\x0d\x0a \
                 \
- text: 'List '\x0d\x0a\
+       anchors.h\
+orizontalCenter:\
+ parent.horizont\
+alCenter\x0d\x0a      \
                 \
-        Layout.f\
-illWidth: true\x0d\x0a\
+  width: 140\x0d\x0a  \
                 \
-        flat: tr\
-ue\x0d\x0a            \
-            back\
-ground.anchors.f\
-ill: this\x0d\x0a     \
+      height: 20\
+0\x0d\x0a             \
+           color\
+: 'red'\x0d\x0a       \
                 \
-   spacing: 40\x0d\x0a\
+ border.color: '\
+black'\x0d\x0a        \
+                \
+border.width: 2\x0d\
+\x0a\x0d\x0a             \
+           Mouse\
+Area {\x0d\x0a        \
+                \
+    anchors.fill\
+: parent\x0d\x0a\x0d\x0a    \
+                \
+        onClicke\
+d: {\x0d\x0a          \
+                \
+      console.lo\
+g(index + ' clic\
+ked')\x0d\x0a         \
+                \
+       root.game\
+Start(path)\x0d\x0a   \
+                \
+             // \
+le.excute_game_w\
+ith_le(path)\x0d\x0a  \
+                \
+              Ap\
+plicationWindow.\
+window.visibilit\
+y = Window.Minim\
+ized\x0d\x0a          \
+                \
+  }\x0d\x0a           \
+             }\x0d\x0a\
                 \
     }\x0d\x0a         \
-       }\x0d\x0a      \
-      }\x0d\x0a       \
-     Label {\x0d\x0a  \
-              te\
-xt: qsTr('change\
- title')\x0d\x0a      \
-          elide:\
- Label.ElideRigh\
-t\x0d\x0a             \
-   horizontalAli\
-gnment: Qt.Align\
-HCenter\x0d\x0a       \
-         vertica\
-lAlignment: Qt.A\
-lignVCenter\x0d\x0a   \
-             Lay\
+           Label\
+ {\x0d\x0a            \
+            anch\
+ors.horizontalCe\
+nter: parent.hor\
+izontalCenter\x0d\x0a \
+                \
+       text: gam\
+eName\x0d\x0a         \
+           }\x0d\x0a  \
+              }\x0d\
+\x0a            }\x0d\x0a\
+        }\x0d\x0a    }\
+\x0d\x0a}\x0d\x0a\
+\x00\x00\x02\xfa\
+/\
+/ SideDrawer.qml\
+\x0d\x0a/* qmlscene is\
+ not work */\x0d\x0aim\
+port QtQuick 2.1\
+4\x0d\x0aimport QtQuic\
+k.Controls 2.14\x0d\
+\x0aimport QtQuick.\
+Layouts 1.14\x0d\x0a\x0d\x0a\
+Drawer {\x0d\x0a    id\
+: root\x0d\x0a\x0d\x0a    si\
+gnal clicked()\x0d\x0a\
+\x0d\x0a    width: 200\
+\x0d\x0a    height: la\
+yout.implicitHei\
+ght\x0d\x0a\x0d\x0a    Colum\
+nLayout {\x0d\x0a     \
+   id: layout\x0d\x0a\x0d\
+\x0a        width: \
+parent.width\x0d\x0a  \
+      Label {\x0d\x0a \
+           text:\
+ 'Drawer'\x0d\x0a     \
+       horizonta\
+lAlignment: Text\
+.AlignHCenter\x0d\x0a \
+           verti\
+calAlignment: Te\
+xt.AlignVCenter\x0d\
+\x0a            fon\
+t.pixelSize: 20\x0d\
+\x0a            Lay\
 out.fillWidth: t\
-rue\x0d\x0a           \
- }\x0d\x0a        }\x0d\x0a \
-   }\x0d\x0a\x0d\x0a    Text\
-Area {\x0d\x0a        \
-id: text\x0d\x0a      \
-  placeholderTex\
-t: qsTr(\x22Enter n\
-ame\x22)\x0d\x0a//       \
- text: qsTr(\x22sad\
-fsdfsdfsd\x22)\x0d\x0a   \
- }\x0d\x0a\x0d\x0a}\x0d\x0a\
+rue\x0d\x0a        }\x0d\x0a\
+        Button {\
+\x0d\x0a            te\
+xt: 'List '\x0d\x0a   \
+         Layout.\
+fillWidth: true\x0d\
+\x0a            fla\
+t: true\x0d\x0a       \
+     background.\
+anchors.fill: th\
+is\x0d\x0a            \
+spacing: 40\x0d\x0a   \
+         onClick\
+ed: root.clicked\
+()\x0d\x0a        }\x0d\x0a \
+   }\x0d\x0a}\x0d\x0a\
+\x00\x00\x00,\
+m\
+odule Main\x0d\x0aSide\
+Drawer 1.0 ./Sid\
+eDrawer.qml\
+\x00\x00\x02\xfa\
+/\
+/ SideDrawer.qml\
+\x0d\x0a/* qmlscene is\
+ not work */\x0d\x0aim\
+port QtQuick 2.1\
+4\x0d\x0aimport QtQuic\
+k.Controls 2.14\x0d\
+\x0aimport QtQuick.\
+Layouts 1.14\x0d\x0a\x0d\x0a\
+Drawer {\x0d\x0a    id\
+: root\x0d\x0a\x0d\x0a    si\
+gnal clicked()\x0d\x0a\
+\x0d\x0a    width: 200\
+\x0d\x0a    height: la\
+yout.implicitHei\
+ght\x0d\x0a\x0d\x0a    Colum\
+nLayout {\x0d\x0a     \
+   id: layout\x0d\x0a\x0d\
+\x0a        width: \
+parent.width\x0d\x0a  \
+      Label {\x0d\x0a \
+           text:\
+ 'Drawer'\x0d\x0a     \
+       horizonta\
+lAlignment: Text\
+.AlignHCenter\x0d\x0a \
+           verti\
+calAlignment: Te\
+xt.AlignVCenter\x0d\
+\x0a            fon\
+t.pixelSize: 20\x0d\
+\x0a            Lay\
+out.fillWidth: t\
+rue\x0d\x0a        }\x0d\x0a\
+        Button {\
+\x0d\x0a            te\
+xt: 'List '\x0d\x0a   \
+         Layout.\
+fillWidth: true\x0d\
+\x0a            fla\
+t: true\x0d\x0a       \
+     background.\
+anchors.fill: th\
+is\x0d\x0a            \
+spacing: 40\x0d\x0a   \
+         onClick\
+ed: root.clicked\
+()\x0d\x0a        }\x0d\x0a \
+   }\x0d\x0a}\x0d\x0a\
+\x00\x00\x00,\
+m\
+odule Main\x0d\x0aSide\
+Drawer 1.0 ./Sid\
+eDrawer.qml\
 \x00\x00\x00\xc7\
 <\
 svg xmlns=\x22http:\
@@ -145,6 +329,22 @@ qt_resource_name = b"\
 \x08\x01Z\x5c\
 \x00m\
 \x00a\x00i\x00n\x00.\x00q\x00m\x00l\
+\x00\x07\
+\x04[\xc2#\
+\x00m\
+\x00o\x00d\x00u\x00l\x00e\x00s\
+\x00\x04\
+\x00\x057\xfe\
+\x00M\
+\x00a\x00i\x00n\
+\x00\x0e\
+\x02\x963\x5c\
+\x00S\
+\x00i\x00d\x00e\x00D\x00r\x00a\x00w\x00e\x00r\x00.\x00q\x00m\x00l\
+\x00\x06\
+\x07\x84+\x02\
+\x00q\
+\x00m\x00l\x00d\x00i\x00r\
 \x00\x16\
 \x03d\xbe\x87\
 \x00b\
@@ -157,14 +357,26 @@ qt_resource_struct = b"\
 \x00\x00\x00\x00\x00\x00\x00\x00\
 \x00\x00\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x02\
 \x00\x00\x00\x00\x00\x00\x00\x00\
-\x00\x00\x00\x12\x00\x02\x00\x00\x00\x02\x00\x00\x00\x03\
+\x00\x00\x00\x12\x00\x02\x00\x00\x00\x03\x00\x00\x00\x03\
 \x00\x00\x00\x00\x00\x00\x00\x00\
-\x00\x00\x00\x1c\x00\x02\x00\x00\x00\x01\x00\x00\x00\x05\
+\x00\x00\x00D\x00\x02\x00\x00\x00\x03\x00\x00\x00\x07\
+\x00\x00\x00\x00\x00\x00\x00\x00\
+\x00\x00\x00\x1c\x00\x02\x00\x00\x00\x01\x00\x00\x00\x06\
 \x00\x00\x00\x00\x00\x00\x00\x00\
 \x00\x00\x00.\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\
-\x00\x00\x01p\x9e\x16\xd6\x0b\
-\x00\x00\x00D\x00\x00\x00\x00\x00\x01\x00\x00\x06n\
+\x00\x00\x01p\xb5\x96\xac\xdb\
+\x00\x00\x00\x9a\x00\x00\x00\x00\x00\x01\x00\x00\x11f\
 \x00\x00\x01pq\x88~f\
+\x00\x00\x00X\x00\x02\x00\x00\x00\x02\x00\x00\x00\x0a\
+\x00\x00\x01p\xaaC\x96\xc6\
+\x00\x00\x00f\x00\x00\x00\x00\x00\x01\x00\x00\x0b\x0a\
+\x00\x00\x01p\xb5\x96&3\
+\x00\x00\x00\x88\x00\x00\x00\x00\x00\x01\x00\x00\x0e\x08\
+\x00\x00\x01p\xaa]\x88\xd3\
+\x00\x00\x00f\x00\x00\x00\x00\x00\x01\x00\x00\x0e8\
+\x00\x00\x01p\xb5\x96&3\
+\x00\x00\x00\x88\x00\x00\x00\x00\x00\x01\x00\x00\x116\
+\x00\x00\x01p\xaa]\x88\xd3\
 "
 
 def qInitResources():

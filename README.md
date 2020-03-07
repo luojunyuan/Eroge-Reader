@@ -2,6 +2,7 @@
 
 ```powershell
 main.py
+resources.qrc
 
 \---reader
     |   reader.py

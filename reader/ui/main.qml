@@ -2,6 +2,7 @@ import QtQuick 2.14
 import QtQuick.Layouts 1.14
 import QtQuick.Controls 2.14
 import QtQuick.Window 2.14
+import Qt.labs.platform 1.1
 
 import Main 1.0
 
@@ -39,12 +40,12 @@ ApplicationWindow {
 
     signal gameStart(string gamePath)
     signal test()
+    onClosing: ApplicationWindow.window.visibility = Window.Minimized
 
     ScrollView {
         id: gamePanel
 
         anchors.fill: parent
-
 
         GridView {
             cellWidth: 160
@@ -58,6 +59,7 @@ ApplicationWindow {
             id: gameModel
 
             ListElement { gameName: 'アマツツミ'; path: 'C:\\Users\\ljy77\\Saved Games\\アマツツミ\\cmvs32.exe' }
+            ListElement { gameName: 'addGame'; path: '' }
         }
         Component {
             id: gameCard
@@ -84,9 +86,15 @@ ApplicationWindow {
                             anchors.fill: parent
 
                             onClicked: {
-                                console.log(index + ' clicked')
-                                ApplicationWindow.window.visibility = Window.Minimized
+                                if (gameName === 'addGame') {
+                                    console.log('do nothing')
+                                    return
+                                }
+
+                                ApplicationWindow.window.visibility = Window.Hidden
+                                console.log('Send gameStart signal with path ' + path)
                                 root.gameStart(path)
+                                tray.showMessage("Eroge Reader", "reader is hidden here!", SystemTrayIcon.Information, 500 )
                             }
                         }
                     }
@@ -98,4 +106,50 @@ ApplicationWindow {
             }
         }
     }
+
+    SystemTrayIcon {
+        id: tray
+
+        visible: true
+        icon.mask: true
+        icon.source: "images/octcat.png"
+        tooltip: qsTr("システムトレイさんぷる")
+
+        //@@@ Memo:
+        // 現状、一度表示したメニューはメニューアイテムをクリックしないと消去されない...
+        // メニュー消去のためのコードが必要???
+
+        menu: Menu {
+            MenuItem {
+                text: qsTr("Panel")
+                onTriggered: root.visibility = Window.Windowed
+            }
+            MenuItem { separator: true }
+            MenuItem {
+                text: qsTr("Quit")
+                onTriggered: Qt.quit()
+            }
+        }
+        onActivated: {
+            switch ( reason ) {
+            case SystemTrayIcon.Trigger:
+                console.log("left clicked.")
+                break
+            case SystemTrayIcon.MiddleClick:
+                console.log("middle clicked.")
+                break
+            case SystemTrayIcon.Context:
+                console.log("right clicked.")
+                break;
+            case SystemTrayIcon.DoubleClick:
+                onTriggered: root.visible = !root.visible
+                break
+            default:
+                console.log( reason )
+                break
+            }
+        }
+        onMessageClicked: console.log('message clicked')
+    }
+
 }

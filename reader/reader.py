@@ -12,8 +12,7 @@ class Reader(QObject):
         self.le = LocaleEmulator()
         self.hooker = Hooker()
         self.game = GameManager()
-        
-        self.hooker.setDaemon(True)
+
 
         # Create QML engine
         self.engine = QQmlApplicationEngine()
@@ -35,7 +34,6 @@ class Reader(QObject):
     
     def test(self, data):
         print(data.index, data.code, data.text)
-        print(1)
 
     def qml_button_test(self):
         self.hooker.attach(1)

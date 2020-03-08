@@ -39,6 +39,7 @@ class Hooker(QObject, Thread):
         path = 'C:\\Users\\ljy77\\应用\\YUKI\\lib\\textractor\\TextractorCLI.exe'
         self.cli = Popen(path, encoding='utf-16-le', text=True, 
                         stdin=PIPE, stdout=PIPE, stderr=PIPE)
+        self.setDaemon(True)
         Hooker.instance = self
 
     def run(self):

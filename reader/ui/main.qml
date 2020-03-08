@@ -85,9 +85,8 @@ ApplicationWindow {
 
                             onClicked: {
                                 console.log(index + ' clicked')
-                                root.gameStart(path)
-                                // le.excute_game_with_le(path)
                                 ApplicationWindow.window.visibility = Window.Minimized
+                                root.gameStart(path)
                             }
                         }
                     }

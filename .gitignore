@@ -1,7 +1,11 @@
-# qtcreator generated files
+# Qtcreator generated files
 ui.qmlproject.user
 
 # Python byte code
 __pycache__/
 *.pyc
 resources.py
+
+# Distribution / packaging
+build/
+dist/

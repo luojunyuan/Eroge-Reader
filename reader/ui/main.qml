@@ -1,6 +1,7 @@
 import QtQuick 2.14
 import QtQuick.Layouts 1.14
 import QtQuick.Controls 2.14
+import QtQuick.Controls.Universal 2.14
 import QtQuick.Window 2.14
 import Qt.labs.platform 1.1
 
@@ -93,8 +94,9 @@ ApplicationWindow {
 
                                 ApplicationWindow.window.visibility = Window.Hidden
                                 console.log('Send gameStart signal with path ' + path)
-                                root.gameStart(path)
                                 tray.showMessage("Eroge Reader", "reader is hidden here!", SystemTrayIcon.Information, 500 )
+                                root.gameStart(path)
+                                attechWindow.show()
                             }
                         }
                     }
@@ -152,4 +154,9 @@ ApplicationWindow {
         onMessageClicked: console.log('message clicked')
     }
 
+//    onInjectOver: attechWindow.show()
+
+    Attach {
+        id: attechWindow
+    }
 }
